@@ -58,4 +58,6 @@ public class BikeParts {
     public void setPartsWindResistanceMultiplier(Float partsWindResistanceMultiplier) {
         this.partsWindResistanceMultiplier = partsWindResistanceMultiplier;
     }
+
+
 }
