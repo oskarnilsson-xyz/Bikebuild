@@ -31,11 +31,21 @@ public class Main {
                 buildBike();
                 break;
             case "2":
-                System.out.println(bike.arePartsCompatible());
+                try{
+                    System.out.println(bike.arePartsCompatible());
+                    bike.performance();
+                }
+                catch (Exception nfe){
+                    System.out.println("Build your bike first!");
+                }
                 break;
             case "3":
-                bike.printToFile();
-
+                try{
+                    bike.printToFile();
+                }
+                catch (Exception nfe){
+                    System.out.println("Build your bike first!");
+                }
                 break;
             case "4":
                 System.out.println("Ending program");

@@ -6,6 +6,9 @@ import java.util.Scanner;
 public class Bike {
     private Scanner scn = new Scanner(System.in);
 
+   public void performance(){
+        System.out.println("Place holder for performance calculator");
+    }
 
     private Integer bikeWeight() {
         Integer weightOptionals = 0;
@@ -19,6 +22,7 @@ public class Bike {
 
         return weight;
     }
+
 
     public Integer tryToParseInt() {
         Boolean parseIntSuccess = false;
