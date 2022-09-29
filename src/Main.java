@@ -12,14 +12,9 @@ public class Main {
     Bike bike = new Bike();
 
 
-
     public static void main(String[] args) {
-        while (true) {
             Main main = new Main();
             main.welcome();
-        }
-
-
     }
 
 
@@ -31,19 +26,17 @@ public class Main {
                 buildBike();
                 break;
             case "2":
-                try{
+                try {
                     System.out.println(bike.arePartsCompatible());
                     bike.performance();
-                }
-                catch (Exception nfe){
+                } catch (Exception nfe) {
                     System.out.println("Build your bike first!");
                 }
                 break;
             case "3":
-                try{
+                try {
                     bike.printToFile();
-                }
-                catch (Exception nfe){
+                } catch (Exception nfe) {
                     System.out.println("Build your bike first!");
                 }
                 break;
@@ -71,7 +64,8 @@ public class Main {
 
 
         System.out.println("Input the weight, in grams, of your frame set: (example: 1565)");
-        Integer frameSetWeight = bike.tryToParseInt();;
+        Integer frameSetWeight = bike.tryToParseInt();
+        ;
         System.out.println("Input the Wind resistance multiplier of your frame set: (example: 0.98)");
         Float frameSetWindResistanceMultiplier = bike.tryToParseFloat();
         System.out.println("Input the colour of your frame set: (example: Red)");
