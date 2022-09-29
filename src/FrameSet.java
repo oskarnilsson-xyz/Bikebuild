@@ -1,5 +1,5 @@
 public class FrameSet extends BikeParts{
-    String partsColour;
+    private String partsColour;
 
     public FrameSet(String partsMake, String partsModel, String partsMaterial, Integer partsWeight, Float partsWindResistanceMultiplier, String partsColour) {
         super(partsMake, partsModel, partsMaterial, partsWeight, partsWindResistanceMultiplier);

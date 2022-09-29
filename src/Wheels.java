@@ -1,8 +1,8 @@
 public class Wheels extends GearSet{
 
-    Byte partsWheelDepth;
-    Byte partsWheelWidth;
-    Boolean partsIsFrontWheel;
+    private Byte partsWheelDepth;
+    private Byte partsWheelWidth;
+    private Boolean partsIsFrontWheel;
 
     public Wheels(String partsMake, String partsModel, Integer partsWeight, String partsProductLine, Byte partsGearRatio, Byte partsNumberOfGears, Boolean partsIsDiscBreak, Byte partsWheelDepth, Byte partsWheelWidth, Boolean partsIsFrontWheel) {
         super(partsMake, partsModel, partsWeight, partsProductLine, partsGearRatio, partsNumberOfGears, partsIsDiscBreak);

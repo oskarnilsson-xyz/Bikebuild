@@ -1,7 +1,7 @@
 public class Optionals extends BikeParts {
 
 
-    String partsTypeOfOptional;
+    private String partsTypeOfOptional;
 
 
     public Optionals(String partsMake, String partsModel, Integer partsWeight, String partsTypeOfOptional) {

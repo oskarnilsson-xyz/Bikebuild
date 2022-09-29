@@ -11,6 +11,8 @@ public class Main {
     public static Optionals[] optionalsArray = new Optionals[10];
     Bike bike = new Bike();
 
+
+
     public static void main(String[] args) {
         while (true) {
             Main main = new Main();
@@ -56,9 +58,12 @@ public class Main {
         String frameSetModel = scn.nextLine();
         System.out.println("Input the material of your frame set: (example: Carbon)");
         String frameSetMaterial = scn.nextLine();
-        System.out.println("Input the weight, in grams, of your frame set: (example: 1565)");Integer frameSetWeight = Integer.parseInt(scn.nextLine());
+
+
+        System.out.println("Input the weight, in grams, of your frame set: (example: 1565)");
+        Integer frameSetWeight = bike.tryToParseInt();;
         System.out.println("Input the Wind resistance multiplier of your frame set: (example: 0.98)");
-        Float frameSetWindResistanceMultiplier = Float.parseFloat(scn.nextLine());
+        Float frameSetWindResistanceMultiplier = bike.tryToParseFloat();
         System.out.println("Input the colour of your frame set: (example: Red)");
         String frameSetColour = scn.nextLine();
 
@@ -72,13 +77,13 @@ public class Main {
         System.out.println("Input the model of your gear set: (example: 105)");
         String gearSetModel = scn.nextLine();
         System.out.println("Input the weight, in grams, of your gear set: (example: 2180)");
-        Integer gearSetWeight = Integer.parseInt(scn.nextLine());
+        Integer gearSetWeight = bike.tryToParseInt();
         System.out.println("Input the product line of your gear set: (example: 105 R7000)");
         String gearSetProductLine = scn.nextLine();
         System.out.println("Input the size of your large chain wheel of your gear set: (example: 56)");
-        Byte gearSetGearRatio = Byte.parseByte(scn.nextLine());
+        Byte gearSetGearRatio = bike.tryToParseByte();
         System.out.println("Input the number of front gears in your gear set: (example: 2)");
-        Byte gearSetNumberOfGears = Byte.parseByte(scn.nextLine());
+        Byte gearSetNumberOfGears = bike.tryToParseByte();
         System.out.println("Input true or false to indicate if your gear set is disc break compatible: (example: true)");
         Boolean gearSetIsDiscBreak = Boolean.parseBoolean(scn.nextLine());
 
@@ -89,19 +94,19 @@ public class Main {
         System.out.println("Input the model of your wheel set: (example: R5)");
         String wheelsModel = scn.nextLine();
         System.out.println("Input the weight, in grams, of your wheel set: (example: 1110)");
-        Integer wheelsWeight = Integer.parseInt(scn.nextLine());
+        Integer wheelsWeight = bike.tryToParseInt();
         System.out.println("Input the product line of your cassette: (example: 105 R7000)");
         String wheelsProductionLine = scn.nextLine();
         System.out.println("Input the size of your smallest chain wheel on your cassette: (example: 14)");
-        Byte wheelsRatio = Byte.parseByte(scn.nextLine());
+        Byte wheelsRatio = bike.tryToParseByte();
         System.out.println("Input the number of gears on your cassette: (example: 11)");
-        Byte wheelsNumberOfGears = Byte.parseByte(scn.nextLine());
+        Byte wheelsNumberOfGears = bike.tryToParseByte();
         System.out.println("Input true or false to indicate if your wheels are disc break compatible: (example: true)");
         Boolean wheelsIsDiscBreak = Boolean.parseBoolean(scn.nextLine());
         System.out.println("Input the wheel depth in millimeters: (example: 50)");
-        Byte wheelsWheelDepth = Byte.parseByte(scn.nextLine());
+        Byte wheelsWheelDepth = bike.tryToParseByte();
         System.out.println("Input the wheel width in millimeters: (example: 21)");
-        Byte wheelsWheelWidth = Byte.parseByte(scn.nextLine());
+        Byte wheelsWheelWidth = bike.tryToParseByte();
 
         wheelsFront = new Wheels(wheelsMake, wheelsModel, null, null, null, null, wheelsIsDiscBreak, wheelsWheelDepth, wheelsWheelWidth, true);
         wheelsBack = new Wheels(wheelsMake, wheelsModel, wheelsWeight, wheelsProductionLine, wheelsRatio, wheelsNumberOfGears, wheelsIsDiscBreak, wheelsWheelDepth, wheelsWheelWidth, false);
@@ -116,7 +121,7 @@ public class Main {
                 System.out.println("Input the model of your optional: (example: Mudder)");
                 String optionalsModel = scn.nextLine();
                 System.out.println("Input the weight, in grams, of your optional: (example: 18)");
-                Integer optionalsWeight = Integer.parseInt(scn.nextLine());
+                Integer optionalsWeight = bike.tryToParseInt();
                 System.out.println("Input type of optional: (example: Saddle mudguard)");
                 String optionalsTypeOfOptional = scn.nextLine();
                 optionalsArray[i] = new Optionals(optionalsMake, optionalsModel, optionalsWeight, optionalsTypeOfOptional);

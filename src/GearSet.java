@@ -1,9 +1,9 @@
 public class GearSet extends BikeParts{
 
-    String partsProductLine;
-    Byte partsGearRatio;
-    Byte partsNumberOfGears;
-    Boolean partsIsDiscBreak;
+    private String partsProductLine;
+    private Byte partsGearRatio;
+    private Byte partsNumberOfGears;
+    private Boolean partsIsDiscBreak;
 
     public GearSet(String partsMake, String partsModel, Integer partsWeight, String partsProductLine, Byte partsGearRatio, Byte partsNumberOfGears, Boolean partsIsDiscBreak) {
         super(partsMake, partsModel, partsWeight);

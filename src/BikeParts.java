@@ -1,9 +1,9 @@
 public class BikeParts {
-    String partsMake;
-    String partsModel;
-    String partsMaterial;
-    Integer partsWeight;
-    Float partsWindResistanceMultiplier;
+    private String partsMake;
+    private String partsModel;
+    private String partsMaterial;
+    private Integer partsWeight;
+    private Float partsWindResistanceMultiplier;
 
     public BikeParts(String partsMake, String partsModel, Integer partsWeight) {
         this.partsMake = partsMake;
