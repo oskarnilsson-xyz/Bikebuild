@@ -13,8 +13,10 @@ public class Main {
 
 
     public static void main(String[] args) {
-            Main main = new Main();
-            main.welcome();
+           while (true) {
+               Main main = new Main();
+               main.welcome();
+           }
     }
 
 
@@ -27,6 +29,7 @@ public class Main {
                 break;
             case "2":
                 try {
+                    System.out.println("Parts total weight: " + bike.bikeWeight() + "g");
                     System.out.println(bike.arePartsCompatible());
                     bike.performance();
                 } catch (Exception nfe) {
@@ -35,7 +38,7 @@ public class Main {
                 break;
             case "3":
                 try {
-                    bike.printToFile();
+                    System.out.println(bike.printToFile());
                 } catch (Exception nfe) {
                     System.out.println("Build your bike first!");
                 }
@@ -46,7 +49,7 @@ public class Main {
                 break;
             default:
                 System.out.println("Invalid input, returning to menu");
-                welcome();
+
         }
 
     }
@@ -65,7 +68,6 @@ public class Main {
 
         System.out.println("Input the weight, in grams, of your frame set: (example: 1565)");
         Integer frameSetWeight = bike.tryToParseInt();
-        ;
         System.out.println("Input the Wind resistance multiplier of your frame set: (example: 0.98)");
         Float frameSetWindResistanceMultiplier = bike.tryToParseFloat();
         System.out.println("Input the colour of your frame set: (example: Red)");
@@ -89,7 +91,7 @@ public class Main {
         System.out.println("Input the number of front gears in your gear set: (example: 2)");
         Byte gearSetNumberOfGears = bike.tryToParseByte();
         System.out.println("Input true or false to indicate if your gear set is disc break compatible: (example: true)");
-        Boolean gearSetIsDiscBreak = Boolean.parseBoolean(scn.nextLine());
+        Boolean gearSetIsDiscBreak = bike.tryToParseBoolean();
 
         gearSet = new GearSet(gearSetMake, gearSetModel, gearSetWeight, gearSetProductLine, gearSetGearRatio, gearSetNumberOfGears, gearSetIsDiscBreak);
 
@@ -106,7 +108,7 @@ public class Main {
         System.out.println("Input the number of gears on your cassette: (example: 11)");
         Byte wheelsNumberOfGears = bike.tryToParseByte();
         System.out.println("Input true or false to indicate if your wheels are disc break compatible: (example: true)");
-        Boolean wheelsIsDiscBreak = Boolean.parseBoolean(scn.nextLine());
+        Boolean wheelsIsDiscBreak = bike.tryToParseBoolean();
         System.out.println("Input the wheel depth in millimeters: (example: 50)");
         Byte wheelsWheelDepth = bike.tryToParseByte();
         System.out.println("Input the wheel width in millimeters: (example: 21)");

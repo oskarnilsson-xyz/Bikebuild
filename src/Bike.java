@@ -10,7 +10,7 @@ public class Bike {
         System.out.println("Place holder for performance calculator");
     }
 
-    private Integer bikeWeight() {
+    public Integer bikeWeight() {
         Integer weightOptionals = 0;
         for (Optionals n : Main.optionalsArray) {
 
@@ -78,18 +78,21 @@ public class Bike {
         String parseBoolean;
         do {
             parseBoolean = scn.nextLine();
-            try {
-                Byte.parseByte(parseBoolean);
+            if(parseBoolean.equalsIgnoreCase("true")){
                 parseBooleanSuccess = true;
-            } catch (NumberFormatException nfe) {
-                System.out.println("Invalid entry, try again.");
+            }
+            else if(parseBoolean.equalsIgnoreCase("false")) {
+                parseBooleanSuccess = true;
+            }
+                else{
+                System.out.println("Invalid input, try again. ");
             }
         }
         while (!parseBooleanSuccess);
         return Boolean.parseBoolean(parseBoolean);
     }
 
-    private Float windResistance() {
+    private Float windResistance() { //Needed for performance()
         Float resistance = 1.00f;
         resistance *= Main.frameSet.getPartsWindResistanceMultiplier();
 
@@ -108,6 +111,7 @@ public class Bike {
         try {
             File file = new File("BikeBuildBike.txt");
             if (file.createNewFile()) {
+                System.out.println("File created.");
             } else {
                 System.out.println("BikeBuildBike.txt already exists.");
             }
@@ -121,10 +125,12 @@ public class Bike {
             fileWriter.write("Frame set \nMake: " + Main.frameSet.getPartsMake() + " Model: " + Main.frameSet.getPartsModel() + " Material: " + Main.frameSet.getPartsWeight().toString() + " Colour: " + Main.frameSet.getPartsColour());
             fileWriter.write("Gear set \nMake: " + Main.gearSet.getPartsMake() + " Model: " + Main.gearSet.getPartsModel() + " Material: " + Main.gearSet.getPartsWeight().toString());
             fileWriter.write("Wheels \nMake: " + Main.wheelsBack.getPartsMake() + " Model: " + Main.wheelsBack.getPartsModel() + " Material: " + Main.wheelsBack.getPartsWeight().toString());
+
             for (Optionals m : Main.optionalsArray) {
                 if (m != null)
                     fileWriter.write("Optional \nType: " + m.getPartsTypeOfOptional() + "Make: " + m.getPartsMake() + " Model: " + m.getPartsModel() + " Material: " + m.getPartsWeight().toString());
             }
+            fileWriter.write("\nTotal bike weight: " + bikeWeight() + "g");
             fileWriter.close();
             System.out.println("Bike written to file");
         } catch (IOException e) {
