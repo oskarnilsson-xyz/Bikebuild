@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
 public class Main {
+
+
+    //Sadafsd APa
     Integer i = 0;  //variable for going through array
 
     public static FrameSet frameSet;
